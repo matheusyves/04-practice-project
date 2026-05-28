@@ -9,4 +9,4 @@ jobs:
       - name: checkout 
         uses: actions/checkout@v4
       - name: echo event details
-        run: echo "${{ toJSON(github) }}""
+        run: echo "${{ toJSON(github) }}"
