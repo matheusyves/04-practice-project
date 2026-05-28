@@ -1,0 +1,21 @@
+name: CI-CD workflow
+on: [push, workflow_dispatch]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install dependencies
+        run: npm ci 
+      - name: lint
+        run: npm run lint
+      - name: test
+        run: npm run test
+  cd: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: build
+        run: npm run build
+      - name: deploy
+        run: echo "Deploying..."
