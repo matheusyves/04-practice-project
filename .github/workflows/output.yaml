@@ -1,7 +1,7 @@
 name: Output event details from issues
 on: 
   issues:
-    types: opened
+    types: [opened]
 jobs: 
   output_event: 
     runs-on: ubuntu-latest
