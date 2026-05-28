@@ -10,3 +10,5 @@ jobs:
         uses: actions/checkout@v4
       - name: echo event details
         run: echo "${{ toJSON(github) }}"
+      - name: echo owner repository details
+        run: echo "${{ toJSON(github.repository.owner)}}"
