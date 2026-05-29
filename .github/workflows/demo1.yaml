@@ -9,6 +9,8 @@ on:
   push:
     branches: 
       - 'main'
+    paths-ignore:
+      - '.github/workflows/*'
 jobs: 
   output_event: 
     runs-on: ubuntu-latest
