@@ -1,4 +1,4 @@
-name: Events Demo 1
+name: Run on PR opened or edited
 on: 
   pull_request:
     types: [opened, edited]
@@ -6,6 +6,9 @@ on:
      # - edited funciona das duas formas
   workflow_dispatch:
     # precsa estar com : no final por causa do pull_requests, mesmo que sem nada
+  push:
+    branches: 
+      - 'main'
 jobs: 
   output_event: 
     runs-on: ubuntu-latest
