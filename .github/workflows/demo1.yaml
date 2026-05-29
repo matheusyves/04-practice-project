@@ -1,0 +1,16 @@
+name: Events Demo 1
+on: 
+  pull_requests:
+    types: [opened, edited]
+     # - opened  
+     # - edited funciona das duas formas
+  workflow_dispatch:
+    # precsa estar com : no final por causa do pull_requests, mesmo que sem nada
+jobs: 
+  output_event: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout 
+        uses: actions/checkout@v4
+      - name: echo event details
+        run: echo "${{ toJSON(github) }}"
